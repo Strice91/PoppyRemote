@@ -28,55 +28,55 @@
             android:id="@+id/Stand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+        android:src="@drawable/stand" />
 
         <ImageButton
             android:id="@+id/Move"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/move" />
 
         <ImageButton
             android:id="@+id/Hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/hello" />
 
         <ImageButton
             android:id="@+id/Wave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/wave" />
 
         <ImageButton
             android:id="@+id/Shake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/shake" />
 
         <ImageButton
             android:id="@+id/Yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/yes" />
 
         <ImageButton
             android:id="@+id/No"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/no" />
 
         <ImageButton
-            android:id="@+id/Pose"
+            android:id="@+id/Copy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/copy" />
 
         <ImageButton
             android:id="@+id/Dance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/robo" />
+            android:src="@drawable/dance" />
 
     </GridLayout>
 </RelativeLayout>

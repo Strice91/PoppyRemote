@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton shakeBtn;
     ImageButton yesBtn;
     ImageButton noBtn;
-    ImageButton poseBtn;
+    ImageButton copyBtn;
     ImageButton danceBtn;
 
     private String ip;
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         shakeBtn = (ImageButton) findViewById(R.id.Shake);
         yesBtn = (ImageButton) findViewById(R.id.Yes);
         noBtn = (ImageButton) findViewById(R.id.No);
-        poseBtn = (ImageButton) findViewById(R.id.Pose);
+        copyBtn = (ImageButton) findViewById(R.id.Copy);
         danceBtn = (ImageButton) findViewById(R.id.Dance);
 
         standBtn.setOnClickListener(new View.OnClickListener() {
@@ -149,12 +149,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        poseBtn.setOnClickListener(new View.OnClickListener() {
+        copyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Log.w("myApp", "Pose Pressed");
-                udpClient.sendMessage("p");
-                Log.w("myApp", "Pose Command Sent");
+                Log.w("myApp", "Copy Pressed");
+                udpClient.sendMessage("c");
+                Log.w("myApp", "Copy Command Sent");
             }
         });
 
