@@ -5,14 +5,27 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+
 import com.example.strice.poppyremote.ClientSend;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageButton standBtn;
+    ImageButton moveBtn;
+    ImageButton helloBtn;
+    ImageButton waveBtn;
+    ImageButton shakeBtn;
+    ImageButton yesBtn;
+    ImageButton noBtn;
+    ImageButton poseBtn;
+    ImageButton danceBtn;
 
     private String ip;
     private int port;
@@ -25,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        udpClient.execute("bla");
+        addListenerOnButton();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Bla Send", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-                udpClient.execute("bla");
-
+                udpClient.sendMessage("h");
             }
 
         });
@@ -59,5 +72,99 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void addListenerOnButton() {
+
+        standBtn = (ImageButton) findViewById(R.id.Stand);
+        moveBtn = (ImageButton) findViewById(R.id.Move);
+        helloBtn = (ImageButton) findViewById(R.id.Hello);
+        waveBtn = (ImageButton) findViewById(R.id.Wave);
+        shakeBtn = (ImageButton) findViewById(R.id.Shake);
+        yesBtn = (ImageButton) findViewById(R.id.Yes);
+        noBtn = (ImageButton) findViewById(R.id.No);
+        poseBtn = (ImageButton) findViewById(R.id.Pose);
+        danceBtn = (ImageButton) findViewById(R.id.Dance);
+
+        standBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Stand Pressed");
+                udpClient.sendMessage("s");
+                Log.w("myApp", "Stand Command Sent");
+            }
+        });
+
+        moveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Move Pressed");
+                udpClient.sendMessage("m");
+                Log.w("myApp", "Move Command Sent");
+            }
+        });
+
+        helloBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Hello Pressed");
+                udpClient.sendMessage("h");
+                Log.w("myApp", "Hello Command Sent");
+            }
+        });
+
+        waveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Wave Pressed");
+                udpClient.sendMessage("w");
+                Log.w("myApp", "Wave Command Sent");
+            }
+        });
+
+        shakeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Shake Pressed");
+                udpClient.sendMessage("sh");
+                Log.w("myApp", "Shake Command Sent");
+            }
+        });
+
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Yes Pressed");
+                udpClient.sendMessage("y");
+                Log.w("myApp", "Yes Command Sent");
+            }
+        });
+
+        noBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "No Pressed");
+                udpClient.sendMessage("n");
+                Log.w("myApp", "No Command Sent");
+            }
+        });
+
+        poseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Pose Pressed");
+                udpClient.sendMessage("p");
+                Log.w("myApp", "Pose Command Sent");
+            }
+        });
+
+        danceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Dance Pressed");
+                udpClient.sendMessage("d");
+                Log.w("myApp", "Dance Command Sent");
+            }
+        });
     }
 }
