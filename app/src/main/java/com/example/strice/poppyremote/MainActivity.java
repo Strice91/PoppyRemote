@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton noBtn;
     ImageButton copyBtn;
     ImageButton danceBtn;
+    ImageButton robotBtn;
+    ImageButton xBtn;
+    ImageButton yBtn;
 
     private String ip;
     private int port;
@@ -85,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
         noBtn = (ImageButton) findViewById(R.id.No);
         copyBtn = (ImageButton) findViewById(R.id.Copy);
         danceBtn = (ImageButton) findViewById(R.id.Dance);
+        robotBtn = (ImageButton) findViewById(R.id.Robot);
+        xBtn = (ImageButton) findViewById(R.id.X);
+        yBtn = (ImageButton) findViewById(R.id.Y);
 
         standBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +170,33 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("myApp", "Dance Pressed");
                 udpClient.sendMessage("d");
                 Log.w("myApp", "Dance Command Sent");
+            }
+        });
+
+        robotBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Robot Pressed");
+                udpClient.sendMessage("r");
+                Log.w("myApp", "Robot Command Sent");
+            }
+        });
+
+        xBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "X Pressed");
+                udpClient.sendMessage("x");
+                Log.w("myApp", "X Command Sent");
+            }
+        });
+
+        yBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Log.w("myApp", "Y Pressed");
+                udpClient.sendMessage("y");
+                Log.w("myApp", "Y Command Sent");
             }
         });
     }
