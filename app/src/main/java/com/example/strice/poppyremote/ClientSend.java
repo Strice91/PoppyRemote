@@ -24,7 +24,7 @@ public class ClientSend extends AsyncTask<String, Void, String> {
     protected String doInBackground(String[] params) {
         // do above Server call here
 
-
+        ip = params[0];
         while(true)
         {
             try {

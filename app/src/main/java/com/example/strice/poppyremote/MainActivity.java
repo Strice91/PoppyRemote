@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.strice.poppyremote.ClientSend;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton robotBtn;
     ImageButton xBtn;
     ImageButton yBtn;
+    EditText ipText;
 
     private String ip;
     private int port;
@@ -41,15 +43,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        udpClient.execute("bla");
+
         addListenerOnButton();
+        ipText = (EditText)findViewById(R.id.IP);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Bla Send", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                udpClient.sendMessage("h");
+                ip = ipText.getText().toString();
+                Snackbar.make(view, "IP was set to: " + ip, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                udpClient.execute(ip);
             }
 
         });

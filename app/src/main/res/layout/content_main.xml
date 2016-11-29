@@ -13,88 +13,105 @@
     tools:context="com.example.strice.poppyremote.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <GridLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="3"
-        android:rowCount="4"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp">
+        android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/Stand"
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-        android:src="@drawable/stand" />
+            android:columnCount="3"
+            android:rowCount="4"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp">
 
-        <ImageButton
-            android:id="@+id/Move"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/Stand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:src="@drawable/stand"
+                android:cropToPadding="false"
+                android:adjustViewBounds="false" />
+
+            <ImageButton
+                android:id="@+id/Move"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/move" />
+
+            <ImageButton
+                android:id="@+id/Hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hello" />
+
+            <ImageButton
+                android:id="@+id/Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wave" />
+
+            <ImageButton
+                android:id="@+id/Shake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shake" />
+
+            <ImageButton
+                android:id="@+id/Yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yes" />
+
+            <ImageButton
+                android:id="@+id/No"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/no" />
+
+            <ImageButton
+                android:id="@+id/Copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/copy" />
+
+            <ImageButton
+                android:id="@+id/Dance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dance" />
+
+            <ImageButton
+                android:id="@+id/Robot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/robot" />
+
+            <ImageButton
+                android:id="@+id/X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/x" />
+            <ImageButton
+                android:id="@+id/Y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/y" />
+
+
+        </GridLayout>
+
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/move" />
+            android:inputType="textPersonName"
+            android:text="IP"
+            android:ems="10"
+            android:id="@+id/IP" />
+    </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/Hello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hello" />
-
-        <ImageButton
-            android:id="@+id/Wave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wave" />
-
-        <ImageButton
-            android:id="@+id/Shake"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/shake" />
-
-        <ImageButton
-            android:id="@+id/Yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/yes" />
-
-        <ImageButton
-            android:id="@+id/No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/no" />
-
-        <ImageButton
-            android:id="@+id/Copy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/copy" />
-
-        <ImageButton
-            android:id="@+id/Dance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dance" />
-
-        <ImageButton
-            android:id="@+id/Robot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/robot" />
-
-        <ImageButton
-            android:id="@+id/X"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/x" />
-        <ImageButton
-            android:id="@+id/Y"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/y" />
-
-
-    </GridLayout>
 </RelativeLayout>
