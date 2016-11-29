@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="IP"
+            android:text="poppy.clients.ldv.ei.tum.de"
             android:ems="10"
             android:id="@+id/IP" />
     </LinearLayout>

@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String ip;
     private int port;
+    private boolean udpRunning = false;
 
     ClientSend udpClient = new ClientSend();
 
@@ -52,8 +53,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ip = ipText.getText().toString();
-                Snackbar.make(view, "IP was set to: " + ip, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                udpClient.execute(ip);
+                if(!udpRunning){
+                    udpClient.execute(ip);
+                    udpRunning = true;
+                    Snackbar.make(view, "Connection Open! IP: " + ip, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
+                else{
+                    udpClient.cancel(true);
+                    udpRunning = false;
+                    Snackbar.make(view, "Connection Closed!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
             }
 
         });

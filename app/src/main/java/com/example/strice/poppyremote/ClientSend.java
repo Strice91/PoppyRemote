@@ -16,7 +16,7 @@ import java.net.SocketException;
 public class ClientSend extends AsyncTask<String, Void, String> {
 
     private int port = 5005;
-    private String ip = "192.168.1.180";
+    private String ip = "";
     private boolean doSend = false;
     private String msgToSend = "";
 
@@ -25,7 +25,7 @@ public class ClientSend extends AsyncTask<String, Void, String> {
         // do above Server call here
 
         ip = params[0];
-        while(true)
+        while(!isCancelled())
         {
             try {
                 Thread.sleep(10);
@@ -48,6 +48,7 @@ public class ClientSend extends AsyncTask<String, Void, String> {
                 doSend = false;
             }
         }
+        return "Bla";
     }
 
     public void setPort(int p){
